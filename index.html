@@ -1,34 +1,260 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="my.css">
-    <title>Jax's Website</title>
-  </head>
-  <body>
-    <h1>Welcome to my new website for CS 260!</h1>
-    <h2>About: a short statement about me</h2>
-      <p class="fonts">My name is Jax Matthews. I am currently a Senior at Brigham Young University Studying Computer Science. I am from Draper, Utah. </p>
-    <h2>Projects: a list of three projects you have worked on</h2>
-      <ol class="fonts">
-        <li>Created a <a href="https://www.jaxmatthews.com/" target="_blank">website</a></li>
-        <li>Created a codenames board</li>
-        <li>Created a name sorting algorithm</li>
-      </ol>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jax Matthews — Product Manager & TPM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <h2>Experience: a list of your work experience</h2>
-      <ul class="fonts">
-        <li>Agile Coach at BYU's office of IT</li>
-        <li>Account's Payable Clerk</li>
-        <li>Commercial Real Estate Analyst</li>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">Jax Matthews</a>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+    </div>
+  </nav>
 
-    <h2>Contact</h2>
-      <ul class="fonts">
-        <li>Email jxsmatthews@gmail.com</li>
-        <li><a href="https://www.linkedin.com/in/jaxsmatthews" target="_blank">LinkedIn Account</a></li>
-      </ul>
-    <hr>
-        <div>@jax_matthews</div>
-  </body>
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1 class="hero-name">Jax Matthews</h1>
+        <h2 class="hero-title"><span class="typed-prefix">&gt; </span><span id="typed-text"></span><span class="typed-cursor">█</span></h2>
+        <p class="hero-edu">BS Computer Science, Business Minor &nbsp;·&nbsp; Brigham Young University</p>
+        <p class="hero-bio">Technical product and delivery leader with 5+ years driving cross-functional teams across Agile delivery, platform migrations, and product development. CS background with hands-on experience in APIs, CI/CD, and software delivery.</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="https://www.linkedin.com/in/jaxsmatthews" target="_blank" class="btn btn-outline">LinkedIn</a>
+          <a href="https://github.com/JaxMatthews" target="_blank" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="jax_headshot.png" alt="Jax Matthews">
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-inner">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">🐍</span>
+            <span class="card-tag">Python</span>
+          </div>
+          <h3>Python Practice</h3>
+          <p>Comprehensive CS skills rebuild covering Python fundamentals through applied technical skills — data structures, algorithms, JSON/CSV processing, REST APIs, SQL, and system design concepts.</p>
+          <div class="card-tags">
+            <span>Python</span><span>Data Structures</span><span>Algorithms</span><span>SQL</span>
+          </div>
+          <a href="https://github.com/JaxMatthews/python-practice" target="_blank" class="card-link">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">📱</span>
+            <span class="card-tag">Android · AWS</span>
+          </div>
+          <h3>TWEETER</h3>
+          <p>Android MVP social networking application with AWS backend. Built a full-stack mobile app from UI to cloud infrastructure, including user authentication and data persistence.</p>
+          <div class="card-tags">
+            <span>Android</span><span>AWS</span><span>Java</span><span>Mobile</span>
+          </div>
+          <a href="https://github.com/JaxMatthews/TWEETER" target="_blank" class="card-link">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">📝</span>
+            <span class="card-tag">Algorithms</span>
+          </div>
+          <h3>Spelling Corrector</h3>
+          <p>Spelling correction engine built on a Trie data structure. Implements efficient prefix-based word lookup and edit-distance suggestions for real-time spell checking.</p>
+          <div class="card-tags">
+            <span>Java</span><span>Trie</span><span>Algorithms</span><span>Data Structures</span>
+          </div>
+          <a href="https://github.com/JaxMatthews/SpellingCorrector" target="_blank" class="card-link">View on GitHub →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-icon">🌐</span>
+            <span class="card-tag">Systems Programming</span>
+          </div>
+          <h3>HTTP Proxy (CS324)</h3>
+          <p>Low-level HTTP proxy server built in C. Handles client-server communication, request forwarding, and response caching — core systems programming concepts applied to real network infrastructure.</p>
+          <div class="card-tags">
+            <span>C</span><span>Networking</span><span>HTTP</span><span>Systems</span>
+          </div>
+          <a href="https://github.com/JaxMatthews/CS324" target="_blank" class="card-link">View on GitHub →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="section-inner">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">Purple Innovation</span>
+            <span class="timeline-period">July 2023 – January 2026 · Lehi, UT</span>
+          </div>
+          <h3 class="timeline-role">Agile Delivery Manager</h3>
+          <ul class="timeline-bullets">
+            <li>Led critical platform migration across DevOps and Mobile POS teams with limited vendor documentation</li>
+            <li>Improved sprint predictability 30% and on-time delivery to 90%</li>
+            <li>Led release management with zero Sev-1 incidents and 40% reduction in defects</li>
+            <li>Built centralized release tracking system, cutting production triage time 35%</li>
+            <li>Defined requirements for API integrations and platform enhancements</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">BYU Office of IT</span>
+            <span class="timeline-period">May 2022 – May 2023 · Provo, UT</span>
+          </div>
+          <h3 class="timeline-role">Project Manager, Identity & Access Management</h3>
+          <ul class="timeline-bullets">
+            <li>Directed IAM initiative across 5 universities</li>
+            <li>Coordinated identity, authentication, and ERP system integrations</li>
+            <li>Improved stakeholder alignment and reduced reporting overhead 30%</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-company">BYU Office of IT</span>
+            <span class="timeline-period">June 2020 – May 2022 · Provo, UT</span>
+          </div>
+          <h3 class="timeline-role">Associate Product Manager & Scrum Master</h3>
+          <ul class="timeline-bullets">
+            <li>Owned product roadmap, backlog, and feature planning for NetSuite Admin platform</li>
+            <li>Scrum Master for NetSuite Admin and PeopleSoft Platform teams</li>
+            <li>Improved sprint cadence and predictability across both teams</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="section-inner">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="timeline-meta">
+          <span class="timeline-company">Brigham Young University</span>
+          <span class="timeline-period">Provo, UT</span>
+        </div>
+        <h3 class="timeline-role">BS Computer Science &nbsp;·&nbsp; Minor in Business</h3>
+        <p class="edu-detail">Certified Scrum Master (CSM)</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-inner">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-card">
+          <h3>Product & Delivery</h3>
+          <ul>
+            <li>Roadmap Development</li>
+            <li>Backlog Prioritization</li>
+            <li>User Story Creation</li>
+            <li>Product Discovery</li>
+            <li>Stakeholder Management</li>
+            <li>Release Management</li>
+          </ul>
+        </div>
+        <div class="skills-card">
+          <h3>Technical</h3>
+          <ul>
+            <li>API & System Integration</li>
+            <li>CI/CD Coordination</li>
+            <li>Platform Delivery</li>
+            <li>DevOps Collaboration</li>
+            <li>Python · Java · C++</li>
+            <li>SQL · Git · GitHub</li>
+          </ul>
+        </div>
+        <div class="skills-card">
+          <h3>Tools & Frameworks</h3>
+          <ul>
+            <li>Jira & Confluence</li>
+            <li>Agile & Scrum</li>
+            <li>SAFe Framework</li>
+            <li>GitHub</li>
+            <li>NetSuite</li>
+            <li>PeopleSoft</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-inner contact-inner">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-sub">I'm open to Product Manager, Product Owner, Scrum Master, and Technical Project Manager roles. Let's connect.</p>
+      <div class="contact-links">
+        <a href="mailto:jxsmatthews@gmail.com" class="btn btn-primary">jxsmatthews@gmail.com</a>
+        <a href="https://www.linkedin.com/in/jaxsmatthews" target="_blank" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Jax Matthews</p>
+  </footer>
+
+  <script>
+    const roles = ['Product Manager', 'Technical Project Manager', 'Scrum Master'];
+    const el = document.getElementById('typed-text');
+    let roleIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function type() {
+      const current = roles[roleIndex];
+      el.textContent = deleting
+        ? current.slice(0, charIndex--)
+        : current.slice(0, charIndex++);
+
+      let delay = deleting ? 50 : 90;
+
+      if (!deleting && charIndex > current.length) {
+        delay = 2000;
+        deleting = true;
+      } else if (deleting && charIndex < 0) {
+        deleting = false;
+        charIndex = 0;
+        roleIndex = (roleIndex + 1) % roles.length;
+        delay = 400;
+      }
+
+      setTimeout(type, delay);
+    }
+
+    document.addEventListener('DOMContentLoaded', type);
+  </script>
+
+</body>
 </html>
