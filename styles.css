@@ -163,7 +163,15 @@ nav {
   font-size: 1rem;
   color: var(--text);
   max-width: 600px;
+  margin-bottom: 12px;
+}
+
+.hero-aside {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  max-width: 600px;
   margin-bottom: 36px;
+  font-style: italic;
 }
 
 .hero-cta {
