@@ -6,7 +6,7 @@
   <title>Jax Matthews — Product Manager, TPM, Delivery Manager & Product Owner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J18F8LFFEB"></script>
   <script>
@@ -58,7 +58,7 @@
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
 
-        <div class="card">
+        <div class="card reveal">
           <div class="card-header">
             <span class="card-icon">🐍</span>
             <span class="card-tag">Python</span>
@@ -71,7 +71,7 @@
           <a href="https://github.com/JaxMatthews/python-practice" target="_blank" class="card-link">View on GitHub →</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
           <div class="card-header">
             <span class="card-icon">📱</span>
             <span class="card-tag">Android · AWS</span>
@@ -84,7 +84,7 @@
           <a href="https://github.com/JaxMatthews/TWEETER" target="_blank" class="card-link">View on GitHub →</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
           <div class="card-header">
             <span class="card-icon">📝</span>
             <span class="card-tag">Algorithms</span>
@@ -97,7 +97,7 @@
           <a href="https://github.com/JaxMatthews/SpellingCorrector" target="_blank" class="card-link">View on GitHub →</a>
         </div>
 
-        <div class="card">
+        <div class="card reveal">
           <div class="card-header">
             <span class="card-icon">🌐</span>
             <span class="card-tag">Systems Programming</span>
@@ -119,7 +119,7 @@
       <h2 class="section-title">Experience</h2>
       <div class="timeline">
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
           <div class="timeline-meta">
             <span class="timeline-company">Purple Innovation</span>
             <span class="timeline-period">July 2023 – January 2026 · Lehi, UT</span>
@@ -134,7 +134,7 @@
           </ul>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
           <div class="timeline-meta">
             <span class="timeline-company">BYU Office of IT</span>
             <span class="timeline-period">May 2022 – May 2023 · Provo, UT</span>
@@ -147,7 +147,7 @@
           </ul>
         </div>
 
-        <div class="timeline-item">
+        <div class="timeline-item reveal">
           <div class="timeline-meta">
             <span class="timeline-company">BYU Office of IT</span>
             <span class="timeline-period">June 2020 – May 2022 · Provo, UT</span>
@@ -166,7 +166,7 @@
   <section id="education">
     <div class="section-inner">
       <h2 class="section-title">Education</h2>
-      <div class="edu-item">
+      <div class="edu-item reveal">
         <div class="timeline-meta">
           <span class="timeline-company">Brigham Young University</span>
           <span class="timeline-period">Provo, UT</span>
@@ -181,7 +181,7 @@
     <div class="section-inner">
       <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
-        <div class="skills-card">
+        <div class="skills-card reveal">
           <h3>Product & Delivery</h3>
           <ul>
             <li>Roadmap Development</li>
@@ -192,7 +192,7 @@
             <li>Release Management</li>
           </ul>
         </div>
-        <div class="skills-card">
+        <div class="skills-card reveal">
           <h3>Technical</h3>
           <ul>
             <li>API & System Integration</li>
@@ -203,7 +203,7 @@
             <li>SQL · Git · GitHub</li>
           </ul>
         </div>
-        <div class="skills-card">
+        <div class="skills-card reveal">
           <h3>Tools & Frameworks</h3>
           <ul>
             <li>Jira & Confluence</li>
@@ -262,6 +262,31 @@
     }
 
     document.addEventListener('DOMContentLoaded', type);
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    function applyPositionHue() {
+      const pageHeight = document.documentElement.scrollHeight || 1;
+      document.querySelectorAll('.card, .skills-card, .btn, .section-title, .timeline-item, .edu-item').forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const px = Math.min(Math.max((rect.left + rect.width / 2) / window.innerWidth, 0), 1);
+        const py = Math.min(Math.max((rect.top + window.scrollY + rect.height / 2) / pageHeight, 0), 1);
+        const hue = 185 + (px * 0.4 + py * 0.6) * 70;
+        el.style.setProperty('--hue', hue.toFixed(1));
+      });
+    }
+
+    window.addEventListener('load', applyPositionHue);
+    window.addEventListener('resize', applyPositionHue);
   </script>
 
 </body>
